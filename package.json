@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/stephene-bernardo/authentication-page-backend/issues"
   },
-  "homepage": "https://github.com/stephene-bernardo/authentication-page-backend#readme"
+  "homepage": "https://github.com/stephene-bernardo/authentication-page-backend#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
