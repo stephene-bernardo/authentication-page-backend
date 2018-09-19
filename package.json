@@ -18,6 +18,9 @@
   "homepage": "https://github.com/stephene-bernardo/authentication-page-backend#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "promise": "^8.0.2",
+    "sqlite3": "^4.0.2"
   }
 }
