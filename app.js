@@ -4,13 +4,19 @@ const port = 3000
 var bodyParser = require('body-parser')
 var jwt = require('jsonwebtoken');
 const DatabaseSetup = require('./src/database')
-
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database('./auth.db');
 DatabaseSetup.execute().then(function () {
     app.use(bodyParser.json())
     app.post('/auth', (req, res) => {
+        db.each(`SELECT * FROM user_info WHERE username==\"${req.body.username}\" AND password==\"${req.body.password}\"`,
+            (err, row) => res.send(jwt.sign(row.name, 'shhhhh')),
+            (err, retrieveRow) => {
+                if (retrieveRow === 0) {
+                    res.send("Not Authenticated User")
+                }
+            });
 
-        var token = jwt.sign(req.body, 'shhhhh');
-        res.send(token)
     })
 
     app.get('/verifyToken', (req, res) => {

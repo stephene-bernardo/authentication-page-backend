@@ -19,6 +19,9 @@ class DatabaseSetup {
                         that.showAllUsers(callback)
                     })
                 }
+                else {
+                    callback()
+                }
             })
         });
     }
