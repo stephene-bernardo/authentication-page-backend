@@ -36,7 +36,6 @@ class DatabaseSetup {
     static setUpDefaultUsers() {
 
         var stmt = db.prepare("INSERT INTO user_info VALUES (?, ?, ?)");
-
         stmt.run("kbernard", "secret", "karl bernardo");
         stmt.run("foo", "bar", "foo bar")
         stmt.run("spammy", "secret", "spammy pizzo")
